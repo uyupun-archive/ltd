@@ -12,11 +12,12 @@ class LTSequenceManager
 
     /**
      * LTSequenceManager constructor.
-     * @param $filePath
+     * @param $argv
      */
-    public function __construct($filePath)
+    public function __construct($argv)
     {
-        $names = $this->readCsvFile($filePath);
+        if ($this->isFilePath($argv)) $names = $this->readCsvFile($argv);
+        else                          $names = $this->readStrings($argv);
         $names = Utils::arrayCollapse($names);
         $this->names = $this->shuffle($names);
     }
@@ -29,6 +30,18 @@ class LTSequenceManager
         foreach ($this->names as $index => $name) {
             echo "\033[0;32m" . ($index + 1) . ": $name\033[0m\n";
         }
+    }
+
+    /**
+     * ファイルパスかどうか
+     *
+     * @param $argv
+     * @return bool
+     */
+    private function isFilePath($argv)
+    {
+        if (strpos($argv, '/') === false) return false;
+        return true;
     }
 
     /**
@@ -49,6 +62,17 @@ class LTSequenceManager
         }
 
         return $records;
+    }
+
+    /**
+     * 文字列を配列に変換する
+     *
+     * @param $argv
+     * @return array
+     */
+    private function readStrings($argv)
+    {
+        return explode(',', $argv);
     }
 
     /**

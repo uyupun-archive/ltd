@@ -11,5 +11,5 @@ $ chmod u+x ltd
 ### Commands
 
 ```bash
-$ ./ltd seq <csv_file_path>
+$ ./ltd seq <csv_file_path | foo,bar,baz>
 ```
