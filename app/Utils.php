@@ -59,6 +59,28 @@ class Utils
     }
 
     /**
+     * ファイルが存在するか
+     *
+     * @param $filePath
+     * @return bool
+     */
+    public static function existsFile($filePath)
+    {
+        if (file_exists($filePath)) return true;
+        return false;
+    }
+
+    /**
+     * @param $filePath
+     * @return bool
+     */
+    public static function isCsvFile($filePath)
+    {
+        if (mime_content_type($filePath) === 'text/plain') return true;
+        return false;
+    }
+
+    /**
      * CSVファイルを配列に変換する
      *
      * @param $filePath
@@ -66,7 +88,8 @@ class Utils
      */
     public static function csvToArray($filePath)
     {
-        // TODO: CSVファイルかどうか
+        if (!Utils::existsFile($filePath)) return [];
+        if (!Utils::isCsvFile($filePath)) return [];
 
         $file = new \SplFileObject($filePath);
         $file->setFlags(\SplFileObject::READ_CSV);
