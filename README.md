@@ -1,2 +1,2 @@
 # LTD
-**Lightning Talks Daemon** is a service than supports Lightning Talks.
+🍣 **Lightning Talks Daemon** is a service that supports Lightning Talks 🍕
