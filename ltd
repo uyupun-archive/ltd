@@ -1,5 +1,13 @@
-#!/usr/bin/env/php
-
+#!/usr/bin/env php
 <?php
 
-echo 'hello, world!';
+require __DIR__ . '/vendor/autoload.php';
+
+switch ($argv[1]) {
+  // LT順番発表
+  case 'seq':
+    (new App\LTSequenceManager)->display();
+    break;
+  default:
+    echo 'No match command.';
+}
