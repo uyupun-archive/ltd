@@ -72,7 +72,9 @@ class LTSequenceManager
      */
     private function readStrings($argv)
     {
-        return explode(',', $argv);
+        $names = str_replace(' ', '', $argv);
+        $names = explode(',', $names);
+        return $names;
     }
 
     /**
