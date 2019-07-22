@@ -16,39 +16,44 @@ class LTSequenceManager
      */
     public function __construct($argv)
     {
-        if (Utils::isFilePath($argv)) $this->readCsvFile($argv);
-        else                          $this->readStrings($argv);
-        $this->shuffle();
+        if (Utils::isFilePath($argv)) $names = $this->readCsvFile($argv);
+        else                          $names = $this->readStrings($argv);
+        $this->names = $this->shuffle($names);
     }
 
     /**
      * CSVファイルを読み込む
      *
      * @param $filePath
+     * @return array
      */
     private function readCsvFile($filePath)
     {
         $names = Utils::csvToArray($filePath);
         $names = Utils::arrayCollapse($names);
-        $this->names = $names;
+        return $names;
     }
 
     /**
      * 文字列を読み込む
      *
      * @param $argv
+     * @return array
      */
     private function readStrings($argv)
     {
-        $this->names = Utils::stringToArray($argv);
+        return Utils::stringToArray($argv);
     }
 
     /**
      * シャッフル
+     *
+     * @param $names
+     * @return mixed
      */
-    private function shuffle()
+    private function shuffle($names)
     {
-        $this->names = Utils::fisherYatesShuffle($this->names);
+        return Utils::fisherYatesShuffle($names);
     }
 
     /**
