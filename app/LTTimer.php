@@ -24,12 +24,11 @@ class LTTimer
      */
     public function countdown()
     {
-        $second = $this->minutes * 60;
-        for ($i = 0; $i < $second; $i++) {
-            echo "\r";
-            echo "\033[0;32m" . '' . ($second - $i) . ' seconds left' . "\033[0m";
+        $second = $this->minutes;
+        for ($i = $second; $i >= 0; --$i) {
+            echo "\r\033[0;32m" . $i . " seconds left     " . "\033[0m";
             sleep(1);
         }
-        echo PHP_EOL;
+        echo "\r\033[0;32m" . '----- KANKANKANKANKANKAN!!!!!!!!!!! -----' . "\033[0m" . PHP_EOL;
     }
 }
