@@ -24,7 +24,7 @@ class LTTimer
      */
     public function countdown()
     {
-        $second = $this->minutes;
+        $second = $this->minutes * 60;
         for ($i = $second; $i >= 0; --$i) {
             echo "\r\033[0;32m" . $i . " seconds left     " . "\033[0m";
             sleep(1);

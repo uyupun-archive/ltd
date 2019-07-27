@@ -12,4 +12,5 @@ $ chmod u+x ltd
 
 ```bash
 $ ./ltd seq <csv_file_path | foo,bar,baz>
+$ ./ltd time <minutes>
 ```
