@@ -62,7 +62,7 @@ class LTSequenceManager
     public function display()
     {
         foreach ($this->names as $index => $name) {
-            echo "\033[0;32m" . ($index + 1) . ": $name\033[0m\n";
+            echo "\033[0;32m" . ($index + 1) . ": $name\033[0m" . PHP_EOL;
         }
     }
 }

@@ -8,6 +8,10 @@ switch ($argv[1]) {
     case 'seq':
         (new App\LTSequenceManager($argv[2]))->display();
         break;
+    // 時間計測
+    case 'time':
+        isset($argv[2]) ? (new App\LTTimer($argv[2]))->countdown() : (new App\LTTimer())->countdown();
+        break;
     default:
         echo 'No match command.';
 }
