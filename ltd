@@ -10,7 +10,7 @@ switch ($argv[1]) {
         break;
     // 時間計測
     case 'time':
-        isset($argv[2]) ? (new App\LTTimer($argv[2]))->countdown() : (new App\LTTimer())->countdown();
+        (new App\LTTimer($argc === 3 ? $argv[2] : 5))->countdown();
         break;
     default:
         echo 'No match command.';

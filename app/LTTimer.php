@@ -12,11 +12,11 @@ class LTTimer
 
     /**
      * LTTimer constructor.
-     * @param int $argv
+     * @param int $minutes
      */
-    public function __construct($argv = 5)
+    public function __construct($minutes = 5)
     {
-        $this->minutes = $argv;
+        $this->minutes = $minutes;
     }
 
     /**
