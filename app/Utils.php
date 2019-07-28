@@ -9,6 +9,37 @@ namespace App;
 class Utils
 {
     /**
+     * 緑色文字の出力
+     *
+     * @param $text
+     */
+    public static function echoGreen($text)
+    {
+        echo "\r\033[0;32m$text\033[0m";
+    }
+
+    /**
+     * 緑色文字の出力(改行)
+     *
+     * @param $text
+     */
+    public static function echoGreenLn($text)
+    {
+        echo "\r\033[0;32m$text\033[0m" . PHP_EOL;
+    }
+
+    /**
+     * 緑色文字の出力(前の出力を上書きする)
+     *
+     * @param $text
+     */
+    public static function echoGreenOverride($text)
+    {
+        $pad = "     \x08\x08\x08\x08\x08";
+        echo "\r\033[0;32m$text\033[0m$pad";
+    }
+
+    /**
      * 多次元配列を一次元配列に展開する
      *
      * @param $array
