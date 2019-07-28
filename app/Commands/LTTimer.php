@@ -32,5 +32,6 @@ class LTTimer
             sleep(1);
         }
         Utils::echoGreenOverrideLn("----- KANKANKANKANKANKAN!!!!!!!!!!! -----");
+        Utils::beep();
     }
 }

@@ -51,6 +51,14 @@ class Utils
     }
 
     /**
+     * ビープ音の出力
+     */
+    public static function beep()
+    {
+        echo "\x07";
+    }
+
+    /**
      * 多次元配列を一次元配列に展開する
      *
      * @param $array
