@@ -6,11 +6,11 @@ require __DIR__ . '/vendor/autoload.php';
 switch ($argv[1]) {
     // LT順番発表
     case 'seq':
-        (new App\LTSequenceManager($argv[2]))->display();
+        (new App\Commands\LTSequenceManager($argv[2]))->display();
         break;
     // 時間計測
     case 'time':
-        (new App\LTTimer($argc === 3 ? $argv[2] : 5))->countdown();
+        (new App\Commands\LTTimer($argc === 3 ? $argv[2] : 5))->countdown();
         break;
     default:
         echo 'No match command.';

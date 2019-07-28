@@ -1,6 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Commands;
+
+use App\Utils;
 
 /**
  * Class LTSequenceManager
@@ -62,7 +64,7 @@ class LTSequenceManager
     public function display()
     {
         foreach ($this->names as $index => $name) {
-            Utils::echoGreen(($index + 1) . ": $name" . PHP_EOL);
+            Utils::echoGreenLn(($index + 1) . ": $name");
         }
     }
 }

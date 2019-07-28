@@ -1,6 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Commands;
+
+use App\Utils;
 
 /**
  * Class LTTimer
