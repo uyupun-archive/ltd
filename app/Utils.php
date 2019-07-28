@@ -15,7 +15,7 @@ class Utils
      */
     public static function echoGreen($text)
     {
-        echo "\r\033[0;32m$text\033[0m";
+        echo "\033[0;32m$text\033[0m";
     }
 
     /**
@@ -25,7 +25,7 @@ class Utils
      */
     public static function echoGreenLn($text)
     {
-        echo "\r\033[0;32m$text\033[0m" . PHP_EOL;
+        echo "\033[0;32m$text\033[0m" . PHP_EOL;
     }
 
     /**
@@ -37,6 +37,17 @@ class Utils
     {
         $pad = "     \x08\x08\x08\x08\x08";
         echo "\r\033[0;32m$text\033[0m$pad";
+    }
+
+    /**
+     * 緑色文字の出力(前の出力を上書きする, 改行)
+     *
+     * @param $text
+     */
+    public static function echoGreenOverrideLn($text)
+    {
+        $pad = "     \x08\x08\x08\x08\x08";
+        echo "\r\033[0;32m$text\033[0m$pad" . PHP_EOL;
     }
 
     /**

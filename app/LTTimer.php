@@ -24,11 +24,11 @@ class LTTimer
      */
     public function countdown()
     {
-        $second = $this->minutes;
+        $second = $this->minutes * 60;
         for ($i = $second; $i >= 0; --$i) {
             Utils::echoGreenOverride($i . ' seconds left');
             sleep(1);
         }
-        Utils::echoGreenLn("\r----- KANKANKANKANKANKAN!!!!!!!!!!! -----");
+        Utils::echoGreenOverrideLn("----- KANKANKANKANKANKAN!!!!!!!!!!! -----");
     }
 }
